@@ -1,0 +1,49 @@
+*, 
+::before, 
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  margin: 0;
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+
+  & .logo img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  & .nav-bar {
+    
+    & .nav-list {
+      list-style: none;
+      
+      & li .nav-link {
+        text-decoration: none;
+        color: black; 
+      }
+    }
+  }
+}
+
+.hero {
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
