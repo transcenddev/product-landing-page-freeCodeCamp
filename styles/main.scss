@@ -3,6 +3,9 @@
 
   --clr-primary: #f1c40f;
   --clr-light: #fff;
+  --clr-info: #dddddd;
+
+  --box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 5%);
 }
 
 *, 
@@ -11,6 +14,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -22,17 +29,57 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: 7rem 1fr;
 }
 
 .flex {
   display: flex;
 }
 
+.card  {
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--clr-info);
+
+  & .card__title {
+    font-size: 1rem;
+    padding: 1em 0;
+    background: var(--clr-info);
+  }
+
+  & .card__content {
+    
+    & p:first-child {
+      font-size: 1.3rem;
+        font-weight: bold;
+        padding: 0.5em 0;
+    }
+
+    & p {
+      padding: 0.3em 0;
+    }
+  
+    & .card__button {
+      display: inline-block;
+      background-color: var(--clr-primary);
+      text-transform: uppercase;
+      cursor: pointer;
+  
+      padding: 0.7em 1em;
+      margin: 2em 0;
+    }
+    
+  }
+}
+
+.card:hover {
+  box-shadow: none;
+}
+
 .container {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 2em;
 }
 
 
@@ -46,9 +93,11 @@ body {
   padding: 1rem;
 
   background: var(--clr-light);
+  box-shadow: var(--box-shadow);
 
   & .logo {
     width: 60vw;
+    cursor: pointer;
   }
 
   & .logo img {
@@ -82,6 +131,8 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 3em;
+  padding: 1em;
+  text-align: center;
 
   & .hero-title {
     margin-bottom: 0.7em;
@@ -129,6 +180,11 @@ body {
 .features {
   margin-bottom: 3em;
 
+  & .grid {
+    grid-template-columns: 7rem 1fr;
+    margin-bottom: 1em;
+  }
+
   & .grid .icon {
     display: flex;
     align-items: center;
@@ -152,6 +208,21 @@ body {
   margin: 0 auto;
 }
 
+.pricing {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5em;
+  
+
+  margin-top: 3em;
+}
+
+.footer {
+  font-size: small;
+  text-align: center;
+  padding: 1em 0;
+
+}
+
 
 @media screen and (max-width: 768px) {
   .header, .nav-list  {
@@ -159,5 +230,11 @@ body {
     align-items: center;
   }
 
+  .hero {
+    padding-top: 10em;
+  }
 
+  .pricing {
+    grid-template-columns: 1fr;
+  }
 }
