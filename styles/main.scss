@@ -19,13 +19,19 @@ body {
   position: relative;
 }
 
+
+.grid {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+}
+
 .flex {
   display: flex;
 }
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -70,15 +76,12 @@ body {
 }
 
 .hero {
-  background: url(../images/hero.jpg);
-  background-size: cover;
-  background-position: center;
-  height: 70vh;
 
-
+  height: 40vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 3em;
 
   & .hero-title {
     margin-bottom: 0.7em;
@@ -122,6 +125,26 @@ body {
   }
   
 }
+
+.features {
+  margin-bottom: 3em;
+
+  & .grid .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 3em;
+    color: var(--clr-primary);
+  }
+
+  & .grid .desc {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  }
+}
+
 
 .video {
   width: 100%;
